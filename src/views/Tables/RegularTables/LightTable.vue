@@ -14,29 +14,44 @@
       responsive="lg"
       :per-page="perPage"
       :current-page="currentPage"
-    ></b-table>
+    >
+      <template v-slot:cell(acciones)="row">
+        <b-button
+          pill
+          variant="success"
+          size="sm"
+          v-on:click="detalle(row.id)"
+          class="mr-2"
+        >Detalles</b-button>
+        <b-button
+          pill
+          variant="success"
+          size="sm"
+          v-on:click="agregar"
+          class="mr-2"
+        >Agregar</b-button>
+      </template>
+    </b-table>
 
     <b-card-footer class="py-4">
       <div>
-
         <b-pagination
           v-model="currentPage"
           pills
-          size="sm"
+          size="md"
           hide-goto-end-buttons
           :total-rows="rows"
           :per-page="perPage"
           align="center"
           aria-controls="my-table"
         ></b-pagination>
-
       </div>
     </b-card-footer>
   </b-card>
 </template>
 
 <script>
-import json from "../../../../public/response.json"
+import json from "../../../../public/response.json";
 
 export default {
   data() {
@@ -48,11 +63,20 @@ export default {
       fields: [
         //{ key: "id", sortable: true },
         //{ key: "assetType", sortable: false },
-        { key: "ticker", sortable: true },
-        { key: "description", sortable: true },
+        { key: "ticker", label: "Nombre", sortable: true },
+        { key: "description", label: "Descripcion", sortable: true },
+        { key: "acciones", label: "", sortable: false },
       ],
       items: json,
     };
+  },
+  methods: {
+    detalle(id) {
+      console.log(id);
+    },
+    agregar() {
+      console.log('Agregar');
+    },
   },
   computed: {
     rows() {
