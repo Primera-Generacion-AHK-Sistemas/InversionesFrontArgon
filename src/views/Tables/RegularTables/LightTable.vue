@@ -22,14 +22,12 @@
           size="sm"
           v-on:click="detalle(row.id)"
           class="mr-2"
-        >Detalles</b-button>
-        <b-button
-          pill
-          variant="success"
-          size="sm"
-          v-on:click="agregar"
-          class="mr-2"
-        >Agregar</b-button>
+        >
+        <b-icon icon="tools"></b-icon>
+        Detalles</b-button>
+        <b-button pill variant="success" size="sm" v-on:click="agregar" class="mr-2">
+          <i class="ni ni-chart-bar-32"></i>
+          Agregar</b-button>
       </template>
     </b-table>
 
@@ -51,7 +49,7 @@
 </template>
 
 <script>
-import json from "../../../../public/response.json";
+//import json from "../../../../public/pruebas/cedears.json";
 
 export default {
   data() {
@@ -67,21 +65,30 @@ export default {
         { key: "description", label: "Descripcion", sortable: true },
         { key: "acciones", label: "", sortable: false },
       ],
-      items: json,
+      items: [],
     };
   },
   methods: {
-    detalle(id) {
-      console.log(id);
+    detalle() {
+      console.log("Editar");
     },
     agregar() {
-      console.log('Agregar');
+      console.log("Agregar");
+    },
+    getCedears() {
+      const baseURI = "http://127.0.0.1:3010/api/asset/all";
+      this.$http.get(baseURI).then((result) => {
+        this.items = result.data;
+      });
     },
   },
   computed: {
     rows() {
       return this.items.length;
     },
+  },
+  mounted() {
+    this.getCedears();
   },
 };
 </script>
