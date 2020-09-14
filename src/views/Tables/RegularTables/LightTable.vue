@@ -1,12 +1,26 @@
 <template>
   <b-card no-body>
     <b-card-header class="border-0">
-      <h3 class="mb-0">CEDEARS</h3>
+      <b-container>
+        <b-row>
+          <b-col sm="6"><h2>CEDEARS</h2></b-col>
+          <b-col sm="6">
+            <b-input-group class="mt-2">
+              <b-form-input v-model="keyword" placeholder="Buscar" type="text"></b-form-input>
+              <b-input-group-append>
+                <b-button :disabled="!keyword" size="sm" @click="keyword = ''" variant="info">
+                  <b-icon icon="x-circle-fill"></b-icon>
+                </b-button>
+              </b-input-group-append>
+            </b-input-group>
+          </b-col>
+        </b-row>
+      </b-container>
     </b-card-header>
 
     <b-table
       id="my-table"
-      :items="items"
+      :cedears="cedears"
       :fields="fields"
       :sort-by.sync="sortBy"
       :sort-desc.sync="sortDesc"
@@ -14,20 +28,17 @@
       responsive="lg"
       :per-page="perPage"
       :current-page="currentPage"
+      :keyword="keyword"
+      :items="items"
     >
       <template v-slot:cell(acciones)="row">
-        <b-button
-          pill
-          variant="success"
-          size="sm"
-          v-on:click="detalle(row.id)"
-          class="mr-2"
-        >
-        <b-icon icon="tools"></b-icon>
-        Detalles</b-button>
+        <b-button pill variant="success" size="sm" v-on:click="detalle" class="mr-2">
+          <b-icon icon="graph-up"></b-icon>Detalles
+        </b-button>
         <b-button pill variant="success" size="sm" v-on:click="agregar" class="mr-2">
           <i class="ni ni-chart-bar-32"></i>
-          Agregar</b-button>
+          Agregar
+        </b-button>
       </template>
     </b-table>
 
@@ -54,10 +65,11 @@
 export default {
   data() {
     return {
-      perPage: 10,
+      perPage: 15,
       currentPage: 1,
       sortBy: "id",
       sortDesc: false,
+      keyword: "",
       fields: [
         //{ key: "id", sortable: true },
         //{ key: "assetType", sortable: false },
@@ -65,7 +77,7 @@ export default {
         { key: "description", label: "Descripcion", sortable: true },
         { key: "acciones", label: "", sortable: false },
       ],
-      items: [],
+      cedears: [],
     };
   },
   methods: {
@@ -78,13 +90,22 @@ export default {
     getCedears() {
       const baseURI = "http://127.0.0.1:3010/api/asset/all";
       this.$http.get(baseURI).then((result) => {
-        this.items = result.data;
+        this.cedears = result.data;
       });
     },
   },
   computed: {
     rows() {
-      return this.items.length;
+      return this.cedears.length;
+    },
+    items() {
+      return this.keyword
+        ? this.cedears.filter(
+            (item) =>
+              item.ticker.includes(this.keyword) ||
+              item.description.includes(this.keyword)
+          )
+        : this.cedears;
     },
   },
   mounted() {
