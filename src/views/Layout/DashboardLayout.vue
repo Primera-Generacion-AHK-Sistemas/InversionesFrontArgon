@@ -14,7 +14,7 @@
 
         <sidebar-item
             :link="{
-              name: 'Icons',
+              name: 'Iconos',
               path: '/icons',
               icon: 'ni ni-planet text-blue'
               }"
@@ -31,7 +31,7 @@
 
         <sidebar-item
               :link="{
-                name: 'User Profile',
+                name: 'Pefil',
                 path: '/profile',
                 icon: 'ni ni-single-02 text-yellow'
                 }">
@@ -39,7 +39,7 @@
 
         <sidebar-item
                 :link="{
-                  name: 'Tables',
+                  name: 'Tablas',
                   path: '/tables',
                   icon: 'ni ni-bullet-list-67 text-red'
                 }">
