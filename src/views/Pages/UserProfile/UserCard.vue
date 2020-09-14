@@ -12,8 +12,8 @@
 
     <b-card-header class="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
       <div class="d-flex justify-content-between">
-        <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-        <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+        <a href="#" class="btn btn-sm btn-info mr-4">Conectar</a>
+        <a href="#" class="btn btn-sm btn-default float-right">Mensaje</a>
       </div>
     </b-card-header>
 
@@ -23,15 +23,15 @@
           <div class="card-profile-stats d-flex justify-content-center mt-md-5">
             <div>
               <span class="heading">22</span>
-              <span class="description">Friends</span>
+              <span class="description">Amigos</span>
             </div>
             <div>
               <span class="heading">10</span>
-              <span class="description">Photos</span>
+              <span class="description">Fotos</span>
             </div>
             <div>
               <span class="heading">89</span>
-              <span class="description">Comments</span>
+              <span class="description">Comentarios</span>
             </div>
           </div>
         </b-col>
@@ -44,14 +44,16 @@
           <i class="ni location_pin mr-2"></i>Bucharest, Romania
         </div>
         <div class="h5 mt-4">
-          <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+          <i class="ni business_briefcase-24 mr-2"></i>Gerente de Soluciones 
         </div>
         <div>
-          <i class="ni education_hat mr-2"></i>University of Computer Science
+          <i class="ni education_hat mr-2"></i>Universidad de Ciencia Computacional
         </div>
         <hr class="my-4">
-        <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
-        <a href="#">Show more</a>
+        <p>Ryan - nombre adoptado por Nick Murphy, criado en Melbourne y con sede en Brooklyn, escribe, 
+          interpreta y graba toda su propia música.
+        </p>
+        <a href="#">Mostrar más</a>
 
       </div>
     </b-card-body>

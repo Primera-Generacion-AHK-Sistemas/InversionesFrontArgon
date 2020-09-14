@@ -5,7 +5,7 @@
       <!-- Card stats -->
       <b-row>
         <b-col xl="3" md="6">
-          <stats-card title="Total traffic"
+          <stats-card title="Tráfico Total"
                       type="gradient-red"
                       sub-title="350,897"
                       icon="ni ni-active-40"
@@ -13,12 +13,12 @@
 
             <template slot="footer">
               <span class="text-success mr-2">3.48%</span>
-              <span class="text-nowrap">Since last month</span>
+              <span class="text-nowrap">Desde el último mes</span>
             </template>
           </stats-card>
         </b-col>
         <b-col xl="3" md="6">
-          <stats-card title="Total traffic"
+          <stats-card title="Tráfico Total"
                       type="gradient-orange"
                       sub-title="2,356"
                       icon="ni ni-chart-pie-35"
@@ -26,12 +26,12 @@
 
             <template slot="footer">
               <span class="text-success mr-2">12.18%</span>
-              <span class="text-nowrap">Since last month</span>
+              <span class="text-nowrap">Desde el último mes</span>
             </template>
           </stats-card>
         </b-col>
         <b-col xl="3" md="6">
-          <stats-card title="Sales"
+          <stats-card title="Ventas"
                       type="gradient-green"
                       sub-title="924"
                       icon="ni ni-money-coins"
@@ -39,13 +39,13 @@
 
             <template slot="footer">
               <span class="text-danger mr-2">5.72%</span>
-              <span class="text-nowrap">Since last month</span>
+              <span class="text-nowrap">Desde el último mes</span>
             </template>
           </stats-card>
 
         </b-col>
         <b-col xl="3" md="6">
-          <stats-card title="Performance"
+          <stats-card title="Rendimiento"
                       type="gradient-info"
                       sub-title="49,65%"
                       icon="ni ni-chart-bar-32"
@@ -53,7 +53,7 @@
 
             <template slot="footer">
               <span class="text-success mr-2">54.8%</span>
-              <span class="text-nowrap">Since last month</span>
+              <span class="text-nowrap">Desde el último mes</span>
             </template>
           </stats-card>
         </b-col>
@@ -68,7 +68,7 @@
             <b-row align-v="center" slot="header">
               <b-col>
                 <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
-                <h5 class="h3 text-white mb-0">Sales value</h5>
+                <h5 class="h3 text-white mb-0">Valor de Ventas</h5>
               </b-col>
               <b-col>
                 <b-nav class="nav-pills justify-content-end">
@@ -77,7 +77,7 @@
                        :active="bigLineChart.activeIndex === 0"
                        link-classes="py-2 px-3"
                        @click.prevent="initBigChart(0)">
-                      <span class="d-none d-md-block">Month</span>
+                      <span class="d-none d-md-block">Mes</span>
                       <span class="d-md-none">M</span>
                   </b-nav-item>
                   <b-nav-item
@@ -85,8 +85,8 @@
                     :active="bigLineChart.activeIndex === 1"
                     @click.prevent="initBigChart(1)"
                   >
-                    <span class="d-none d-md-block">Week</span>
-                    <span class="d-md-none">W</span>
+                    <span class="d-none d-md-block">Semana</span>
+                    <span class="d-md-none">S</span>
                   </b-nav-item>
                 </b-nav>
               </b-col>
@@ -105,8 +105,8 @@
           <card header-classes="bg-transparent">
             <b-row align-v="center" slot="header">
               <b-col>
-                <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                <h5 class="h3 mb-0">Total orders</h5>
+                <h6 class="text-uppercase text-muted ls-1 mb-1">Rendimiento</h6>
+                <h5 class="h3 mb-0">Ordenes Totales</h5>
               </b-col>
             </b-row>
 
@@ -173,13 +173,13 @@
                 data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
               }
             ],
-            labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            labels: ['May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
           },
           extraOptions: chartConfigs.blueChartOptions,
         },
         redBarChart: {
           chartData: {
-            labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            labels: ['Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
             datasets: [{
               label: 'Sales',
               data: [25, 20, 30, 22, 17, 29]
@@ -194,11 +194,11 @@
         let chartData = {
           datasets: [
             {
-              label: 'Performance',
+              label: 'Rendimiento',
               data: this.bigLineChart.allData[index]
             }
           ],
-          labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          labels: ['May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
         };
         this.bigLineChart.chartData = chartData;
         this.bigLineChart.activeIndex = index;

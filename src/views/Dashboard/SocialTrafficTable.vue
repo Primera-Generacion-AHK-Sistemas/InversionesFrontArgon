@@ -3,10 +3,10 @@
     <template v-slot:header>
       <b-row align-v="center">
         <b-col>
-          <h3 class="mb-0">Social traffic</h3>
+          <h3 class="mb-0">Tráfico Social</h3>
         </b-col>
         <b-col class="text-right">
-          <base-button size="sm" type="primary">See all</base-button>
+          <base-button size="sm" type="primary">Ver todo</base-button>
         </b-col>
       </b-row>
     </template>
@@ -16,13 +16,13 @@
       class="table-responsive table"
       :data="tableData"
       header-row-class-name="thead-light">
-      <el-table-column label="Referral" min-width="115px" prop="name">
+      <el-table-column label="Remisión" min-width="115px" prop="name">
         <template v-slot="{row}">
           <div class="font-weight-600">{{row.name}}</div>
         </template>
       </el-table-column>
 
-      <el-table-column label="Visitors" min-width="110px" prop="visitors">
+      <el-table-column label="Visitante" min-width="110px" prop="visitors">
       </el-table-column>
 
       <el-table-column min-width="220px" prop="progress">

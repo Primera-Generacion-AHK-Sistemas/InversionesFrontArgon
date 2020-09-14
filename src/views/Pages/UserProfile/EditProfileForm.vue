@@ -2,23 +2,23 @@
   <card>
     <b-row align-v="center" slot="header" >
       <b-col cols="8">
-        <h3 class="mb-0">Edit profile </h3>
+        <h3 class="mb-0">Editar Perfil </h3>
       </b-col>
       <b-col cols="4" class="text-right">
-        <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+        <a href="#!" class="btn btn-sm btn-primary">Configuración</a>
       </b-col>
     </b-row>
 
     <b-form @submit.prevent="updateProfile">
-      <h6 class="heading-small text-muted mb-4">User information</h6>
+      <h6 class="heading-small text-muted mb-4">Información de Usuario</h6>
 
       <div class="pl-lg-4">
         <b-row>
           <b-col lg="6">
             <base-input
               type="text"
-              label="Username"
-              placeholder="Username"
+              label="Nombre de Usuario"
+              placeholder="Nombre de Usuario"
               v-model="user.username"
             >
             </base-input>
@@ -26,7 +26,7 @@
           <b-col lg="6">
             <base-input
               type="email"
-              label="Email address"
+              label="Correo"
               placeholder="mike@email.com"
               v-model="user.email"
             >
@@ -37,8 +37,8 @@
           <b-col lg="6">
             <base-input
               type="text"
-              label="First Name"
-              placeholder="First Name"
+              label="Nombre"
+              placeholder="Nombre"
               v-model="user.firstName"
             >
             </base-input>
@@ -46,8 +46,8 @@
           <b-col lg="6">
             <base-input
               type="text"
-              label="Last Name"
-              placeholder="Last Name"
+              label="Apellido"
+              placeholder="Apellido"
               v-model="user.lastName"
             >
             </base-input>
@@ -57,15 +57,15 @@
       <hr class="my-4">
 
       <!-- Address -->
-      <h6 class="heading-small text-muted mb-4">Contact information</h6>
+      <h6 class="heading-small text-muted mb-4">Información de Contacto</h6>
 
       <div class="pl-lg-4">
         <b-row>
           <b-col md="12">
             <base-input
               type="text"
-              label="Address"
-              placeholder="Home Address"
+              label="Dirección"
+              placeholder="Dirección de tu Casa"
               v-model="user.address"
             >
             </base-input>
@@ -75,8 +75,8 @@
           <b-col lg="4">
             <base-input
               type="text"
-              label="City"
-              placeholder="City"
+              label="Ciudad"
+              placeholder="Ciudad"
               v-model="user.city"
             >
             </base-input>
@@ -84,15 +84,15 @@
           <b-col lg="4">
             <base-input
               type="text"
-              label="Country"
-              placeholder="Country"
+              label="País"
+              placeholder="País"
               v-model="user.country"
             >
             </base-input>
           </b-col>
           <b-col lg="4">
             <base-input
-              label="Postal Code"
+              label="Código Postal"
               placeholder="ZIP Code"
               v-model="user.postalCode"
             >
@@ -103,11 +103,11 @@
 
       <hr class="my-4">
       <!-- Description -->
-      <h6 class="heading-small text-muted mb-4">About me</h6>
+      <h6 class="heading-small text-muted mb-4">Sobre Mí</h6>
       <div class="pl-lg-4">
-        <b-form-group label="About Me" label-class="form-control-label" class="mb-0" label-for="about-form-textaria">
+        <b-form-group label="Sobre Mí" label-class="form-control-label" class="mb-0" label-for="about-form-textaria">
          <!--  <label class="form-control-label">About Me</label> -->
-          <b-form-textarea rows="4" value="A beautiful premium dashboard for BootstrapVue." id="about-form-textaria" placeholder="A few words about you ..."></b-form-textarea>
+          <b-form-textarea rows="4" value="Dashboard con BoostrapVue" id="about-form-textaria" placeholder="A few words about you ..."></b-form-textarea>
         </b-form-group>
       </div>
 

@@ -4,10 +4,10 @@
     <template v-slot:header>
       <b-row align-v="center">
         <b-col>
-          <h3 class="mb-0">Page visits</h3>
+          <h3 class="mb-0">Visitas</h3>
         </b-col>
         <b-col class="text-right">
-          <a href="#!" class="btn btn-sm btn-primary">See all</a>
+          <a href="#!" class="btn btn-sm btn-primary">Ver todo</a>
         </b-col>
       </b-row>
     </template>
@@ -15,23 +15,23 @@
     <el-table class="table-responsive table"
               :data="tableData"
               header-row-class-name="thead-light">
-      <el-table-column label="Page name"
+      <el-table-column label="Nombre de la Página"
                        min-width="130px"
                        prop="page">
         <template v-slot="{row}">
           <div class="font-weight-600">{{row.page}}</div>
         </template>
       </el-table-column>
-      <el-table-column label="Visitors"
+      <el-table-column label="Visitantes"
                        min-width="70px"
                        prop="visitors">
       </el-table-column>
-      <el-table-column label="Unique users"
+      <el-table-column label="Usuarios U."
                        min-width="90px"
                        prop="unique">
       </el-table-column>
 
-      <el-table-column label="Bounce rate"
+      <el-table-column label="%Rebotes"
                        min-width="90px"
                        prop="bounceRate">
         <template v-slot="{row}">

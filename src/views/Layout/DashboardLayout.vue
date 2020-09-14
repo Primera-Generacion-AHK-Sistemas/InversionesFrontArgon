@@ -31,7 +31,7 @@
 
         <sidebar-item
               :link="{
-                name: 'Pefil',
+                name: 'Perfil',
                 path: '/profile',
                 icon: 'ni ni-single-02 text-yellow'
                 }">
